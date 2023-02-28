@@ -11,6 +11,7 @@ export interface ISearchPage {
   onInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onAccordionExpand: (dataItem: IUser) => void;
   searchQuery: string;
+  searchQueryForResults: string;
   isError: boolean;
   isLoadingUsers: boolean;
 }
@@ -23,6 +24,7 @@ export const SearchPage = ({
   onAccordionExpand,
   isError,
   isLoadingUsers,
+  searchQueryForResults,
 }: ISearchPage) => {
   const getFeedback = () => {
     if (isLoadingUsers) {
@@ -48,7 +50,7 @@ export const SearchPage = ({
     return (
       <>
         <span data-testid="search-results-for">
-          Showing users for "{searchQuery}":{" "}
+          Showing users for "{searchQueryForResults}":{" "}
         </span>
         <SearchResults users={users} onAccordionExpand={onAccordionExpand} />
       </>

@@ -8,6 +8,7 @@ export const useUsers = () => {
   const [isError, setIsError] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
+  const [searchQueryForResults, setSearchQueryForResults] = useState("");
 
   const handleFetchUsers = async () => {
     setIsError(false);
@@ -23,6 +24,7 @@ export const useUsers = () => {
 
       const data = await results.json();
       setUsers(data.items);
+      setSearchQueryForResults(searchQuery);
     } catch {
       setIsError(true);
     } finally {
@@ -67,6 +69,7 @@ export const useUsers = () => {
   return {
     users,
     searchQuery,
+    searchQueryForResults,
     handleInputChange,
     handleFetchRepos,
     handleFetchUsers,

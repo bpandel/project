@@ -4,6 +4,7 @@ import { useUsers } from "./hooks/useUsers";
 export const Search = () => {
   const {
     searchQuery,
+    searchQueryForResults,
     handleInputChange,
     handleFetchRepos,
     handleFetchUsers,
@@ -19,6 +20,7 @@ export const Search = () => {
       onAccordionExpand={handleFetchRepos}
       users={users}
       searchQuery={searchQuery}
+      searchQueryForResults={searchQueryForResults}
       isError={isError}
       isLoadingUsers={isLoadingUsers}
     />

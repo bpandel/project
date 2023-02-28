@@ -5,6 +5,7 @@ import { SearchPage } from "./SearchPage.component";
 const commonProps = {
   onSearchClick: () => {},
   searchQuery: "",
+  searchQueryForResults: "",
   onAccordionExpand: () => {},
   onInputChange: () => {},
 };
